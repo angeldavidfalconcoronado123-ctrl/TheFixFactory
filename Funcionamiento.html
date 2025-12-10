@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Funcionamiento del Sistema de Captación</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #3ca7d8, #4dd4ac);
+        min-height: 100vh;
+    }
+
+    /* NAVBAR SUPERIOR CON SCROLL HORIZONTAL */
+    .nav-container {
+        background: #ffffffcc;
+        backdrop-filter: blur(10px);
+        display: flex;
+        gap: 15px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+
+        /* Activar scroll horizontal */
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: thin;
+    }
+
+    .nav-button {
+        padding: 10px 18px;
+        background: #1e88e5;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    .nav-button:hover {
+        background: #1565c0;
+    }
+
+    /* ESTILO DEL CONTENIDO DE FUNCIONAMIENTO */
+    section {
+        padding: 50px;
+        margin: 40px;
+        background: linear-gradient(135deg, #c8fff1, #eafff8);
+        border-radius: 15px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #055b52;
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    p.intro {
+        max-width: 700px;
+        margin: 0 auto 40px;
+        text-align: center;
+        color: #044a43;
+        font-size: 18px;
+    }
+
+    .diagrama {
+        width: 90%;
+        margin: 0 auto 50px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .step {
+        text-align: center;
+        width: 180px;
+    }
+
+    .step img {
+        width: 80px;
+        transition: transform 0.4s;
+    }
+
+    .step img:hover {
+        transform: scale(1.15);
+    }
+
+    .step p {
+        font-size: 16px;
+        color: #044a43;
+    }
+
+    .line {
+        width: 120px;
+        height: 4px;
+        background: #0fa88a;
+        position: relative;
+        overflow: hidden;
+        border-radius: 5px;
+        margin-top: 38px;
+    }
+
+    .line::after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 4px;
+        background: #fff;
+        animation: flujo 1.2s infinite linear;
+    }
+
+    @keyframes flujo {
+        from { left: -30px; }
+        to { left: 120px; }
+    }
+
+    .tarjetas {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        margin-top: 50px;
+    }
+
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+    }
+
+    .card h3 {
+        color: #08856e;
+        margin-top: 0;
+    }
+
+    .card p {
+        color: #033e37;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="nav-container">
+    <a href="index.html" class="nav-button">Inicio</a>
+    <a href="Mapa.html" class="nav-button">Panel Interactivo del Sistema</a>
+    <a href="Diagnostico.html" class="nav-button">Diagnóstico</a>
+    <a href="Materiales.html" class="nav-button">Materiales</a>
+    <a href="Funcionamiento.html" class="nav-button">Funcionamiento</a>
+    <a href="Costo.html" class="nav-button">Costos Estimados</a>
+    <a href="Componentes.html" class="nav-button">Componentes</a>
+    <a href="Calculo.html" class="nav-button">Calculo económico</a>
+    <a href="ImpactoA.html" class="nav-button">Impacto Ambiental</a>
+</div>
+
+<section>
+
+    <h2>🔄 Funcionamiento del Sistema de Captación de Agua Pluvial</h2>
+
+    <p class="intro">
+        El sistema de captación permite recolectar, filtrar, almacenar y utilizar el agua de lluvia 
+        mediante un proceso eficiente, sustentable y completamente automático.
+    </p>
+
+    <div class="diagrama">
+
+        <div class="step">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKxpCCQUalc-LI1rPE138ZA6VXFc6NU_Miwg&s">
+            <p>1. Lluvia cae sobre el techo</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLJy2OUggxK-sMylMN0CqRL65zpPFADxRbLQ&sg">
+            <p>2. Canaletas conducen el agua</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <img src="https://islaurbana.mx/wp-content/uploads/2022/07/filtro-hojas-nuevo-02.jpg">
+            <p>3. Filtro primario retiene hojas</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_62t5YwoyWYcImK4OPcyFDvBQRyaVXOB8IQ&s">
+            <p>4. Trampa separa sedimentos</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRFNZWnuwodMyuMBtbGixhZouRJby7BF5xiA&s">
+            <p>5. Tubería conduce el agua</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-HXLS_O24IZgCKvhnFMFnEQU8eJkg2Sq43Q&s">
+            <p>6. Agua entra a la cisterna</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfVViX_RL0GUe1bZqB9CcE1EHV_BsWPRVhOg&s">
+            <p>7. Filtro secundario mejora calidad</p>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="step">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjfkYw96tnr75qIV9dkEbT5XAXhL1DJAjSHQ&s">
+            <p>8. Bomba distribuye agua</p>
+        </div>
+
+    </div>
+
+    <div class="tarjetas">
+
+        <div class="card">
+            <h3>1. Captación</h3>
+            <p>
+                El agua de lluvia cae sobre el techo y fluye hacia las canaletas.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>2. Filtración inicial</h3>
+            <p>
+                Se eliminan hojas, ramas y sólidos grandes con un filtro primario.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>3. Conducción</h3>
+            <p>
+                La tubería transporta el agua hacia la cisterna con pendiente adecuada.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>4. Almacenamiento</h3>
+            <p>
+                La cisterna almacena el agua de manera segura y controlada.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>5. Filtración final</h3>
+            <p>
+                Un filtro secundario mejora la calidad del agua antes de usarse.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>6. Distribución</h3>
+            <p>
+                Una bomba envía agua a sanitarios, riego o limpieza.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

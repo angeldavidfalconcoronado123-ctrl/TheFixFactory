@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo Económico - Sistema de Captación</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #3ca7d8, #4dd4ac);
+            min-height: 100vh;
+        }
+
+        /* Barra de navegación deslizable */
+        .nav-container {
+            background: #ffffffcc;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-wrap: nowrap;         /* NO permite saltos */
+            overflow-x: auto;          /* Scroll horizontal */
+            white-space: nowrap;       /* Mantiene los botones en línea */
+            gap: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        /* Ocultar barra de scroll pero permitir desplazamiento */
+        .nav-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .nav-container::-webkit-scrollbar-thumb {
+            background: #1e88e5;
+            border-radius: 10px;
+        }
+
+        .nav-button {
+            display: inline-block;     /* Para el scroll horizontal */
+            padding: 10px 18px;
+            background: #1e88e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-button:hover {
+            background: #1565c0;
+        }
+
+        .calculadora {
+            background: #e2fff6;
+            padding: 40px;
+            margin: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0a6b65;
+            margin-bottom: 20px;
+        }
+
+        .form {
+            display: grid;
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .form div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            color: #064545;
+        }
+
+        input, select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #b4e3d5;
+        }
+
+        .resultados {
+            margin-top: 40px;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .resultados h3 {
+            color: #067a55;
+            font-size: 22px;
+        }
+
+        .valor {
+            font-size: 30px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #085f45;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            background: #0c8c74;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            grid-column: span 2;
+        }
+
+        button:hover {
+            background: #0aa57f;
+        }
+
+        @media (max-width: 600px) {
+            .form {
+                grid-template-columns: 1fr;
+            }
+            button {
+                grid-column: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de navegación deslizable -->
+    <div class="nav-container">
+        <a href="index.html" class="nav-button">Inicio</a>
+        <a href="Mapa.html" class="nav-button">Panel Interactivo del Sistema</a>
+        <a href="Diagnostico.html" class="nav-button">Diagnóstico</a>
+        <a href="Materiales.html" class="nav-button">Materiales</a>
+        <a href="Funcionamiento.html" class="nav-button">Funcionamiento</a>
+        <a href="Costo.html" class="nav-button">Costos Estimados</a>
+        <a href="Componentes.html" class="nav-button">Componentes</a>
+        <a href="Calculo.html" class="nav-button">Calculo económico</a>
+        <a href="ImpactoA.html" class="nav-button">Impacto Ambiental</a>
+    </div>
+
+<section class="calculadora">
+    <h2>💰 Cálculo Económico del Sistema de Captación</h2>
+
+    <div class="form">
+        <div>
+            <label>Volumen del sistema (m³):</label>
+            <input type="number" id="volumen" value="576">
+        </div>
+
+        <div>
+            <label>Material de tubería:</label>
+            <select id="material">
+                <option value="350">PVC — $350 por metro</option>
+                <option value="500">PEAD — $500 por metro</option>
+                <option value="650">Cobre — $650 por metro</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Longitud de tubería (m):</label>
+            <input type="number" id="longitud" value="120">
+        </div>
+
+        <div>
+            <label>Mano de obra (MXN):</label>
+            <input type="number" id="mano" value="18000">
+        </div>
+
+        <div>
+            <label>Costo por m³ de almacenamiento (MXN):</label>
+            <input type="number" id="costo_m3" value="950">
+        </div>
+
+        <div>
+            <label>Precio del m³ de agua (MXN):</label>
+            <input type="number" id="precio_agua" value="25">
+        </div>
+
+        <button onclick="calcular()">Calcular</button>
+    </div>
+
+    <div class="resultados">
+        <h3>Resultado del análisis económico</h3>
+
+        <p class="valor" id="costo"></p>
+        <p>Costo total del sistema</p>
+
+        <p class="valor" id="ahorro"></p>
+        <p>Ahorro esperado anual</p>
+
+        <p class="valor" id="retorno"></p>
+        <p>Tiempo estimado de recuperación (ROI)</p>
+    </div>
+</section>
+
+<script>
+function calcular() {
+    let volumen = parseFloat(document.getElementById("volumen").value);
+    let material = parseFloat(document.getElementById("material").value);
+    let longitud = parseFloat(document.getElementById("longitud").value);
+    let mano = parseFloat(document.getElementById("mano").value);
+    let costo_m3 = parseFloat(document.getElementById("costo_m3").value);
+    let precio_agua = parseFloat(document.getElementById("precio_agua").value);
+
+    let costoTuberia = material * longitud;
+    let costoAlmacenamiento = costo_m3 * volumen;
+    let costoTotal = costoTuberia + costoAlmacenamiento + mano;
+
+    let ahorroAnual = 414 * precio_agua;
+
+    let retorno = costoTotal / ahorroAnual;
+
+    document.getElementById("costo").textContent = "$" + costoTotal.toLocaleString();
+    document.getElementById("ahorro").textContent = "$" + ahorroAnual.toLocaleString() + "/año";
+    document.getElementById("retorno").textContent = retorno.toFixed(1) + " años";
+}
+</script>
+
+</body>
+</html>

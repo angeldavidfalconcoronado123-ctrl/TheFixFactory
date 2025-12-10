@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico del Campus - Captación Pluvial</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Fondo nuevo con gradiente */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #3ca7d8, #4dd4ac);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* NAVBAR con scroll horizontal */
+        .nav-container {
+            background: #ffffffcc;
+            backdrop-filter: blur(10px);
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+
+            overflow-x: auto;       /* 👉 Scroll horizontal */
+            white-space: nowrap;    /* 👉 Evita saltos de línea */
+            scrollbar-width: thin;  /* Firefox */
+        }
+
+        /* Scrollbar personalizado (Chrome) */
+        .nav-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .nav-container::-webkit-scrollbar-thumb {
+            background: #1e88e5;
+            border-radius: 20px;
+        }
+
+        .nav-container::-webkit-scrollbar-track {
+            background: #c7e9ff;
+        }
+
+        /* Botones */
+        .nav-button {
+            padding: 10px 18px;
+            background: #1e88e5;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block; /* Necesario para que el scroll funcione bien */
+        }
+
+        .nav-button:hover {
+            background: #1565c0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0099ff, #00c27a);
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            margin-top: 30px;
+            text-align: center;
+            color: #0077cc;
+            font-weight: 600;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border-left: 6px solid #00b894;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #0066aa;
+        }
+
+        .card p {
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: 40px;
+            background: #003366;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR DESLIZABLE -->
+    <div class="nav-container">
+        <a href="index.html" class="nav-button">Inicio</a>
+        <a href="Mapa.html" class="nav-button">Panel Interactivo del Sistema</a>
+        <a href="Diagnostico.html" class="nav-button">Diagnóstico</a>
+        <a href="Materiales.html" class="nav-button">Materiales</a>
+        <a href="Funcionamiento.html" class="nav-button">Funcionamiento</a>
+        <a href="Costo.html" class="nav-button">Costos Estimados</a>
+        <a href="Componentes.html" class="nav-button">Componentes</a>
+        <a href="Calculo.html" class="nav-button">Calculo económico</a>
+        <a href="ImpactoA.html" class="nav-button">Impacto Ambiental</a>
+    </div>
+
+<header>
+    <h1>Diagnóstico del Campus y Justificación Técnica</h1>
+</header>
+
+<div class="container">
+
+    <h2 class="section-title">2.1 Diagnóstico del Campus</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🏫 Edificios con potencial de captación</h3>
+            <p>Los techos amplios y planos permiten recolectar miles de litros durante la temporada de lluvias.</p>
+            <p>Los materiales impermeables facilitan el escurrimiento hacia canaletas y bajantes.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌦 Condiciones ambientales</h3>
+            <p>El clima de la región presenta lluvias estacionales que favorecen la recolección de agua pluvial.</p>
+            <p>La humedad del suelo puede mejorar usando agua captada para riego.</p>
+        </div>
+
+        <div class="card">
+            <h3>🛠 Infraestructura existente</h3>
+            <p>Existen áreas verdes que requieren riego constante.</p>
+            <p>Hay espacios disponibles para colocar tanques sin afectar la movilidad del campus.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">2.2 Justificación Técnica</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>✔ Aprovechamiento de superficies</h3>
+            <p>Los edificios cuentan con superficies ideales para captación eficiente de agua de lluvia.</p>
+        </div>
+
+        <div class="card">
+            <h3>✔ Reducción del consumo de agua potable</h3>
+            <p>La captación permitirá abastecer el riego, limpieza y usos no potables.</p>
+        </div>
+
+        <div class="card">
+            <h3>✔ Materiales accesibles</h3>
+            <p>Se pueden emplear PVC, PP y PEAD, materiales económicos, durables y fáciles de instalar.</p>
+        </div>
+
+        <div class="card">
+            <h3>✔ Impacto ambiental positivo</h3>
+            <p>Contribuye a la sustentabilidad, reduce escurrimientos e inundaciones locales.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title">2.3 Beneficios Esperados</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>💰 Ahorro económico</h3>
+            <p>Disminuye el uso de agua potable y reduce costos en servicios.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌱 Conciencia ambiental</h3>
+            <p>Promueve la sustentabilidad entre los estudiantes y personal del campus.</p>
+        </div>
+
+        <div class="card">
+            <h3>💧 Autosuficiencia hídrica</h3>
+            <p>El campus podrá aprovechar mejor la temporada de lluvias.</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    Sistema de Captación Pluvial - Proyecto Campus Sustentable
+</footer>
+
+</body>
+</html>

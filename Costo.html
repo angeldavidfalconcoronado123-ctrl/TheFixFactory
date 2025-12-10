@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Costos del Sistema de Captación Pluvial</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #3ca7d8, #4dd4ac);
+        min-height: 100vh;
+    }
+
+    /* NAV */
+    .nav-container {
+        background: #ffffffcc;
+        backdrop-filter: blur(10px);
+        display: flex;
+        gap: 15px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+
+        /* NUEVO: Scroll horizontal */
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Ocultar barra de scroll en navegadores compatibles */
+    .nav-container::-webkit-scrollbar {
+        height: 6px;
+    }
+    .nav-container::-webkit-scrollbar-thumb {
+        background: #1e88e5;
+        border-radius: 10px;
+    }
+
+    .nav-button {
+        padding: 10px 18px;
+        background: #1e88e5;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+        display: inline-block; /* importante para que no salten de línea */
+    }
+
+    .nav-button:hover {
+        background: #1565c0;
+    }
+
+    /* CONTENIDO */
+    section {
+        padding: 40px;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    h2 {
+        font-size: 32px;
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 26px;
+        color: #34495e;
+    }
+
+    h4 {
+        font-size: 20px;
+        color: #34495e;
+        margin-top: 20px;
+    }
+
+    p {
+        color: #555;
+        font-size: 17px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        color: white;
+    }
+
+    /* TARJETAS */
+    .card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        margin-bottom: 40px;
+    }
+
+    /* TARJETAS FINALES */
+    .precio-card {
+        flex: 1 1 300px;
+        padding: 20px;
+        border-radius: 12px;
+        color: #000;
+    }
+
+    .beneficios {
+        background: #27ae60;
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 40px;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+        .nav-container {
+            gap: 10px;
+        }
+    }
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav-container">
+    <a href="index.html" class="nav-button">Inicio</a>
+    <a href="Mapa.html" class="nav-button">Panel Interactivo del Sistema</a>
+    <a href="Diagnostico.html" class="nav-button">Diagnóstico</a>
+    <a href="Materiales.html" class="nav-button">Materiales</a>
+    <a href="Funcionamiento.html" class="nav-button">Funcionamiento</a>
+    <a href="Costo.html" class="nav-button">Costos Estimados</a>
+    <a href="Componentes.html" class="nav-button">Componentes</a>
+    <a href="Calculo.html" class="nav-button">Calculo económico</a>
+    <a href="ImpactoA.html" class="nav-button">Impacto Ambiental</a>
+</div>
+
+<!-- CONTENIDO -->
+<section>
+
+    <h2>Costos Estimados del Sistema de Captación de Agua Pluvial</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+        Análisis económico basado en precios promedio en México. 
+        Los costos varían según proveedores y capacidades.
+    </p>
+
+    <hr style="margin: 30px auto; width: 60%; border: 1px solid #dfe6e9;">
+
+    <!-- CARD 1 -->
+    <div class="card">
+        <h3 style="color:#27ae60;">Costos de Materiales Principales</h3>
+
+        <h4>Tuberías y Canaletas</h4>
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr style="background:#27ae60;">
+                        <th>Material</th>
+                        <th>Uso</th>
+                        <th>Costo Estimado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PVC cédula 40</td>
+                        <td>Tuberías principales y bajantes</td>
+                        <td>$80–$150 por metro</td>
+                    </tr>
+                    <tr style="background:#ecf0f1;">
+                        <td>Canaletas de PVC</td>
+                        <td>Captación de agua desde techos</td>
+                        <td>$100–$180 por metro</td>
+                    </tr>
+                    <tr>
+                        <td>Bajantes</td>
+                        <td>Conducción hacia filtros</td>
+                        <td>$120–$200 por metro</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Tanques y Almacenamiento</h4>
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr style="background:#2980b9;">
+                        <th>Tipo de tanque</th>
+                        <th>Capacidad</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PEAD grado alimenticio</td>
+                        <td>5,000 L</td>
+                        <td>$6,000–$10,000</td>
+                    </tr>
+                    <tr style="background:#ecf0f1;">
+                        <td>PEAD técnico</td>
+                        <td>10,000 L</td>
+                        <td>$12,000–$20,000</td>
+                    </tr>
+                    <tr>
+                        <td>Fibra de vidrio</td>
+                        <td>10,000 L</td>
+                        <td>$18,000–$30,000</td>
+                    </tr>
+                    <tr style="background:#ecf0f1;">
+                        <td>Acero inoxidable</td>
+                        <td>5,000 L</td>
+                        <td>$22,000–$40,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h4>Filtros y Tratamiento</h4>
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr style="background:#8e44ad;">
+                        <th>Filtro</th>
+                        <th>Función</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Malla de polipropileno</td>
+                        <td>Retiene hojas y residuos</td>
+                        <td>$150–$350</td>
+                    </tr>
+                    <tr style="background:#ecf0f1;">
+                        <td>Carbón activado</td>
+                        <td>Elimina olor/color</td>
+                        <td>$300–$700</td>
+                    </tr>
+                    <tr>
+                        <td>Trampa de sólidos</td>
+                        <td>Elimina impurezas iniciales</td>
+                        <td>$600–$1,500</td>
+                    </tr>
+                    <tr style="background:#ecf0f1;">
+                        <td>Bomba de agua</td>
+                        <td>Impulsar agua</td>
+                        <td>$1,200–$4,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+        <h3>Costo Total Estimado del Proyecto</h3>
+
+        <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+
+            <div class="precio-card" style="background:#ecf0f1; border-left:6px solid #27ae60;">
+                <h4 style="color:#27ae60;">Alternativa Económica</h4>
+                <p>Sistema básico con tanque de 5,000 L.</p>
+                <p style="font-weight:bold;">$25,000 – $45,000 MXN</p>
+            </div>
+
+            <div class="precio-card" style="background:#e8f6ff; border-left:6px solid #2980b9;">
+                <h4 style="color:#2980b9;">Alternativa Intermedia (Recomendada)</h4>
+                <p>Sistema completo con filtros y tanque de 10,000 L.</p>
+                <p style="font-weight:bold;">$60,000 – $90,000 MXN</p>
+            </div>
+
+            <div class="precio-card" style="background:#f9eaff; border-left:6px solid #8e44ad;">
+                <h4 style="color:#8e44ad;">Alternativa Premium</h4>
+                <p>Sistema automatizado y acero inoxidable.</p>
+                <p style="font-weight:bold;">$120,000 – $200,000 MXN</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- BENEFICIOS -->
+    <div class="beneficios">
+        <h3>Beneficios Económicos</h3>
+        <ul style="font-size:18px; line-height:1.7;">
+            <li>Ahorro de agua potable del 30% al 40%.</li>
+            <li>Ahorro anual: <strong>$10,000 – $25,000 MXN</strong>.</li>
+            <li>Retorno de inversión: <strong>2 a 4 años</strong>.</li>
+        </ul>
+    </div>
+
+</section>
+
+</body>
+</html>

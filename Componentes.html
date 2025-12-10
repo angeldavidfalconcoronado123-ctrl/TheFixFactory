@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Componentes del Sistema de Captación</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #3ca7d8, #4dd4ac);
+        min-height: 100vh;
+    }
+
+    /* NAV CON SCROLL HORIZONTAL */
+    .nav-container {
+        background: #ffffffcc;
+        backdrop-filter: blur(10px);
+        display: flex;
+        gap: 15px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: thin;
+    }
+
+    .nav-container::-webkit-scrollbar {
+        height: 6px;
+    }
+    .nav-container::-webkit-scrollbar-thumb {
+        background: #1e88e5;
+        border-radius: 10px;
+    }
+
+    .nav-button {
+        padding: 10px 18px;
+        background: #1e88e5;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+        display: inline-block;
+    }
+
+    .nav-button:hover {
+        background: #1565c0;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .componentes {
+        padding: 50px;
+        margin: 40px auto;
+        max-width: 1200px;
+        border-radius: 15px;
+        background: linear-gradient(135deg, #d2fff1, #f1fffb);
+    }
+
+    h2 {
+        text-align: center;
+        color: #065f4f;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    /* GRID */
+    .grid {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        justify-items: center;
+    }
+
+    /* TARJETAS FLIP */
+    .card {
+        width: 260px;
+        height: 340px;
+        perspective: 1000px;
+    }
+
+    .inner {
+        width: 100%;
+        height: 100%;
+        transition: transform 0.9s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .card:hover .inner {
+        transform: rotateY(180deg);
+    }
+
+    .front, .back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .front {
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .front img {
+        width: 90px;
+        margin-bottom: 15px;
+    }
+
+    .front h3 {
+        color: #08856e;
+        text-align: center;
+        margin: 0;
+    }
+
+    .back {
+        background: #0fa88a;
+        color: white;
+        transform: rotateY(180deg);
+        padding: 20px;
+    }
+
+    .back ul {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="nav-container">
+    <a href="index.html" class="nav-button">Inicio</a>
+    <a href="Mapa.html" class="nav-button">Panel Interactivo del Sistema</a>
+    <a href="Diagnostico.html" class="nav-button">Diagnóstico</a>
+    <a href="Materiales.html" class="nav-button">Materiales</a>
+    <a href="Funcionamiento.html" class="nav-button">Funcionamiento</a>
+    <a href="Costo.html" class="nav-button">Costos Estimados</a>
+    <a href="Componentes.html" class="nav-button">Componentes</a>
+    <a href="Calculo.html" class="nav-button">Calculo económico</a>
+    <a href="ImpactoA.html" class="nav-button">Impacto Ambiental</a>
+</div>
+
+<section class="componentes">
+    <h2>🔧 Componentes Técnicos del Sistema de Captación de Agua Pluvial</h2>
+
+    <div class="grid">
+
+        <!-- CANALETAS -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ04sRM0uQjxVaMOKYpVFcUbu8TmkRFoH0tGg&s">
+                <h3>Canaletas y Bajantes</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Recolectan agua del techo</li>
+                    <li>Material: PVC, aluminio o galvanizado</li>
+                    <li>Evitan desbordes</li>
+                    <li>Pendiente: 2–5 mm/m</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- REJILLA / TRAMPA DE HOJAS -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlqmigYmdmHsRAQ-q95zitmHq7KGD_ZVSxhg&sg">
+                <h3>Filtro primario<br>(hojas/sedimentos)</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Retiene hojas y sólidos grandes</li>
+                    <li>Instalado en bajantes</li>
+                    <li>Malla o rejilla</li>
+                    <li>Limpieza rápida</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- TRAMPA DE SÓLIDOS -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWqWrVWdNlq9-47UV_RjCMEfeqwEz3h_It4g&s">
+                <h3>Trampa de Sólidos</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Elimina arena y sedimentos</li>
+                    <li>Previene obstrucciones</li>
+                    <li>Mantenimiento semestral</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- TUBERÍA PVC -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIT5lEwaa5PXz17x4o3KVJs1F0m9cuC6Vh7A&s">
+                <h3>Tubería PVC y Conexiones</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Conduce el agua a la cisterna</li>
+                    <li>Resistente y económica</li>
+                    <li>Codos, uniones y pegamento</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- CISTERNA -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6XbZ30spEpFvhaDHkZGMZQTLfFZejefDLYA&s">
+                <h3>Cisterna<br>(500–1,100 L)</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Almacenamiento seguro</li>
+                    <li>Material PEAD/polietileno</li>
+                    <li>Tapa hermética</li>
+                    <li>Evita crecimiento microbiano</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- FLOTADOR -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://i5.walmartimages.com/asr/74d6b8e3-ccb9-471f-a47d-f539f48f8cfe.6ecc90b8a16b737890c7148f4e3e619c.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF">
+                <h3>Flotador / Sensor de Nivel</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Evita sobrellenado</li>
+                    <li>Sensores eléctricos o mecánicos</li>
+                    <li>Control automático</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- FILTRO SECUNDARIO -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://biocleanse.com.mx/wp-content/uploads/2023/02/cloro-para-piscina.jpg">
+                <h3>Filtro secundario<br>malla / carbón / cloro</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Para agua más limpia</li>
+                    <li>Elimina olores y partículas finas</li>
+                    <li>Puede incluir cloración</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- BOMBA -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzpSgoSaSgx7TNqMImzEQ_4hLYKEzJC9mNrA&s">
+                <h3>Bomba (Opcional)</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Presuriza el sistema</li>
+                    <li>Para riego o sanitarios</li>
+                    <li>Puede usar presostato</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- VÁLVULA CHECK -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://valvulasarco.com/wp-content/uploads/2024/03/valvula-retencion-arco.png">
+                <h3>Válvula Check</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Impide retorno del agua</li>
+                    <li>Protege bomba y tuberías</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- LLAVES DE PASO -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://valvulasarco.com/wp-content/uploads/2024/03/valvula-de-copuerta.png">
+                <h3>Llaves de Paso</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Aíslan secciones del sistema</li>
+                    <li>Facilitan mantenimiento</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- BYPASS -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://i.ytimg.com/vi/QAEJTs0ndu0/hqdefault.jpg">
+                <h3>Sistema Bypass</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Desvía agua al drenaje</li>
+                    <li>Útil en primeras lluvias</li>
+                </ul>
+            </div>
+        </div></div>
+
+        <!-- REBOSADERO -->
+        <div class="card"><div class="inner">
+            <div class="front">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMbIfRoqOue_AwEMASdfLm5qyDWoLf-70XpQ&s">
+                <h3>Rebosadero</h3>
+            </div>
+            <div class="back">
+                <ul>
+                    <li>Evita sobrellenado</li>
+                    <li>Dirige exceso a desagüe</li>
+                </ul>
+            </div>
+        </div></div>
+
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mapa Interactivo - Captación Pluvial</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #3ca7d8, #4dd4ac);
+        min-height: 100vh;
+    }
+
+    /* NAVBAR SUPERIOR CON SCROLL */
+    .nav-container {
+        background: #ffffffcc;
+        backdrop-filter: blur(10px);
+        display: flex;
+        gap: 15px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+
+        /* Scroll horizontal */
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: thin;
+    }
+
+    .nav-button {
+        padding: 10px 18px;
+        background: #1e88e5;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+        display: inline-block; /* Necesario para scroll */
+        white-space: nowrap;
+    }
+
+    .nav-button:hover {
+        background: #1565c0;
+    }
+
+    /* TÍTULO */
+    h1 {
+        text-align: center;
+        padding: 20px;
+        color: #ffffff;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+    }
+
+    /* MAPA */
+    .map-container {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .map-container img {
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* PUNTOS INTERACTIVOS */
+    .point {
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        background: #0094ff;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid #fff;
+        box-shadow: 0 0 10px rgba(0,148,255,.8);
+        transition: transform 0.2s;
+    }
+
+    .point:hover {
+        transform: scale(1.25);
+    }
+
+    /* CUADRO DE INFO */
+    .info-box {
+        position: absolute;
+        background: #ffffff;
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        width: 200px;
+        display: none;
+        animation: fadeIn 0.1s ease;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav-container">
+        <a href="index.html" class="nav-button">Inicio</a>
+        <a href="Mapa.html" class="nav-button">Panel Interactivo del Sistema</a>
+        <a href="Diagnostico.html" class="nav-button">Diagnóstico</a>
+        <a href="Materiales.html" class="nav-button">Materiales</a>
+        <a href="Funcionamiento.html" class="nav-button">Funcionamiento</a>
+        <a href="Costo.html" class="nav-button">Costos Estimados</a>
+        <a href="Componentes.html" class="nav-button">Componentes</a>
+        <a href="Calculo.html" class="nav-button">Calculo económico</a>
+        <a href="ImpactoA.html" class="nav-button">Impacto Ambiental</a>
+</div>
+
+<h1>Mapa Interactivo del Sistema de Captación Pluvial</h1>
+
+<div class="map-container">
+
+    <img src="UMBT.jpg" alt="Campus UMB">
+
+    <div class="point" style="top: 60%; left: 90%;"
+         data-info="Tanque General: Aquí se almacena el agua recolectada (10,000 L aprox)."></div>
+
+    <div class="point" style="top: 45%; left: 50%;"
+         data-info="Edificio con captación: Techo equipado para recolectar lluvia y desviarla a filtros."></div>
+
+    <div class="point" style="top: 25%; left: 35%;"
+         data-info="Canaletas: Conducen el agua desde el techo hacia los filtros."></div>
+
+    <div class="point" style="top: 24%; left: 43%;"
+         data-info="Filtro de primera lluvia: elimina hojas, polvo y sedimentos antes de llegar al tanque."></div>
+
+    <div class="point" style="top: 67%; left: 40%;"
+         data-info="Área de riego: Zona donde se aprovecha el agua pluvial para el pasto y plantas."></div>
+
+    <div class="point" style="top: 20%; left: 70%;"
+         data-info="Tubos y conducción: Aquí bajan las tuberías que llevan el agua hacia el pozo."></div>
+
+</div>
+
+<div id="infoBox" class="info-box"></div>
+
+<script>
+    const points = document.querySelectorAll('.point');
+    const infoBox = document.getElementById('infoBox');
+
+    points.forEach(point => {
+        point.addEventListener('click', () => {
+            const info = point.dataset.info;
+            infoBox.style.display = 'block';
+            infoBox.style.top = (point.offsetTop - 10) + 'px';
+            infoBox.style.left = (point.offsetLeft + 25) + 'px';
+            infoBox.textContent = info;
+        });
+    });
+
+    document.addEventListener('click', e => {
+        if (!e.target.classList.contains('point')) {
+            infoBox.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
